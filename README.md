@@ -2,13 +2,21 @@ In order to able to run a Pyspark script on the EMR cluster and write into Redsh
 ---------------------------------------------------------------------------------------------------------------------------------------
 
 spark-redshift_2.10-2.0.0.jar
+
 minimal-json-0.9.5.jar
+
 spark-avro_2.11-3.0.0.jar
+
 aws-java-sdk-core-1.11.118.jar
+
 aws-java-sdk-redshift-1.11.118.jar
+
 aws-java-sdk-sts-1.11.118.jar
+
 jackson-dataformat-cbor-2.6.6.jar
+
 redshift-jdbc42-2.1.0.5.jar
+
 
 
 The jar files can be obtained from the following links
