@@ -19,8 +19,8 @@ df3 = session.sql("select customer_sample_data_temp.Costumer_id,customer_sample_
 
 #print(df3.collect())
 
-spark._jsc.hadoopConfiguration().set("fs.s3.awsAccessKeyId","AKIAWFBXPLXZZXUBDUBH")
-spark._jsc.hadoopConfiguration().set("fs.s3.awsSecretAccessKey","y9cWl3IRbCFkCaASfDM5OBWimKaFTPTUqj19j/kE")
+spark._jsc.hadoopConfiguration().set("fs.s3.awsAccessKeyId","XXXX")
+spark._jsc.hadoopConfiguration().set("fs.s3.awsSecretAccessKey","XXXX/kE")
 
 #write to csv
 #df3.coalesce(1).write.option("header",'true').csv("s3n://test-aws-bucket-c4/CUSTOMER_SAMPLE_DATA_AGG5.csv")
@@ -30,5 +30,5 @@ df3.write.format('jdbc').options(
       driver='com.amazon.redshift.jdbc42.Driver',
       dbtable='public.customer_aggregate_data',
       user='awsuser',
-      password='Carrefour123').mode('append').save() 
+      password='XXXX').mode('append').save() 
 
