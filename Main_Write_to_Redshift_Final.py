@@ -15,7 +15,8 @@ responses.printSchema()
 
 responses.createOrReplaceTempView("CUSTOMER_SAMPLE_DATA_TEMP")
 print("Temp View Created")
-df3 = session.sql("select customer_sample_data_temp.Costumer_id,customer_sample_data_temp.Txn_date,sum(customer_sample_data_temp.Txn_Amount) as Txn_Amt  from CUSTOMER_SAMPLE_DATA_TEMP group by customer_sample_data_temp.Costumer_id,customer_sample_data_temp.Txn_date")
+#df3 = session.sql("select customer_sample_data_temp.Costumer_id,customer_sample_data_temp.Txn_date,sum(customer_sample_data_temp.Txn_Amount) as Txn_Amt  from CUSTOMER_SAMPLE_DATA_TEMP group by customer_sample_data_temp.Costumer_id,customer_sample_data_temp.Txn_date")
+df3 = session.sql("select customer_sample_data_temp.Costumer_id,customer_sample_data_temp.Name,customer_sample_data_temp.Txn_date,sum(case when customer_sample_data_temp.Purchase_return = 'Return' then -1 * customer_sample_data_temp.Txn_Amount else customer_sample_data_temp.Txn_Amount end) as Txn_Amt  from CUSTOMER_SAMPLE_DATA_TEMP group by customer_sample_data_temp.Costumer_id,customer_sample_data_temp.Name,customer_sample_data_temp.Txn_date")
 
 #print(df3.collect())
 
